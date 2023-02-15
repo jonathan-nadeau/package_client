@@ -1,5 +1,5 @@
-export interface Packages {
-  _id: string;
+export interface Package {
+  _id?: string;
   description: string;
   code: string;
   categories: string[];

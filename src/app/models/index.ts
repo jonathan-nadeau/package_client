@@ -1,2 +1,2 @@
-export * from './_packages';
+export * from './_package';
 export * from './_establishment';
