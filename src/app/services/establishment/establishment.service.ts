@@ -14,7 +14,7 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class EstablishmentService {
-  API_URL = `http://localhost:8080/${endpoints.PACKAGES}/`;
+  API_URL = `http://localhost:8080/${endpoints.ESTABLISHMENTS}/`;
 
   getEstablishments(): Observable<Establishment[]> {
     return this.http.get<Establishment[]>(this.API_URL);

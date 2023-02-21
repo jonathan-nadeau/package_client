@@ -1,5 +1,6 @@
 export interface Package {
   _id?: string;
+  name: string;
   description: string;
   code: string;
   categories: string[];
@@ -9,4 +10,8 @@ export interface Package {
   price: number;
   discount: number;
   premium: boolean;
+  reviews: Array<{
+    scoreOutOfTen: number;
+    description?: string;
+  }>;
 }

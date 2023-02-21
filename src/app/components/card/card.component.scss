@@ -1,0 +1,56 @@
+.card {
+  background-color: #fff;
+  color: #1f1d1d;
+  width: 20rem;
+
+  &__titles {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title,
+  &__subtitle,
+  &__address {
+    display: flex;
+    align-items: center;
+    color: inherit;
+  }
+
+  &__subtitle {
+    color: #525252;
+  }
+
+  &__address {
+    font-size: 0.875rem;
+    font-weight: 700;
+  }
+
+  &__premiumIcon {
+    margin-left: 0.5rem;
+    color: #211f8b;
+  }
+
+  &__price {
+    text-align: end;
+
+    &--discount {
+      @extend .card__price;
+      text-decoration: line-through;
+      color: #525252;
+    }
+  }
+
+  &__score {
+    display: flex;
+    align-items: center;
+  }
+
+  &__starReview {
+    font-size: 1rem;
+    color: #e4d00a;
+  }
+
+  &__button {
+    background-color: #212121;
+  }
+}

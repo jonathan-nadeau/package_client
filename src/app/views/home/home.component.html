@@ -1,1 +1,14 @@
-<p>home works!</p>
+<main class="home">
+  <section id="premium">
+    <h2>Forfaits vedettes</h2>
+    <div class="home__premium">
+      <app-card
+        *ngFor="let _package of _packages | premium"
+        [_package]="_package"
+      ></app-card>
+    </div>
+  </section>
+  <section id="packages">
+    <h2>Tous les forfaits</h2>
+  </section>
+</main>

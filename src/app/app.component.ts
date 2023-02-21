@@ -12,9 +12,13 @@ export class AppComponent {
 
   constructor(private packageService: PackageService) {}
 
+  ngOnInit() {
+    this.getPackages();
+  }
+
   getPackages(): void {
-    this.packageService
-      .getPackages()
-      .subscribe((result) => (this._packages = result));
+    this.packageService.getPackages().subscribe((result) => {
+      this._packages = result;
+    });
   }
 }

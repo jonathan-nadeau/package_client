@@ -4,6 +4,9 @@
   "newProjectRoot": "projects",
   "projects": {
     "package-client": {
+      "i18n": {
+        "sourceLocale": "fr-CA"
+      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {

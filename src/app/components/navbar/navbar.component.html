@@ -2,4 +2,15 @@
   <h1 class="navbar__main_title">
     <a routerLink="/home">La forfaiterie</a>
   </h1>
+
+  <button mat-button [matMenuTriggerFor]="menu">Forfaits</button>
+  <mat-menu #menu="matMenu">
+    <a
+      *ngFor="let _package of _packages"
+      mat-menu-item
+      [routerLink]="['/package', _package._id]"
+    >
+      {{ _package.name }}
+    </a>
+  </mat-menu>
 </mat-toolbar>

@@ -1,11 +1,15 @@
 /**
  * Modules
  */
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 
 /**
  * Components
@@ -15,13 +19,20 @@ import { HomeComponent } from './views/home/home.component';
 import { AboutComponent } from './views/about/about.component';
 import { AdminComponent } from './views/admin/admin.component';
 import { PackageComponent } from './views/package/package.component';
+import { CardComponent } from './components/card/card.component';
+
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 /**
  * Services
  */
 import { EstablishmentService, PackageService } from './services';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+/**
+ * Pipes
+ */
+import { PremiumPipe } from './pipes/premium/premium.pipe';
 
 @NgModule({
   declarations: [
@@ -31,6 +42,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AdminComponent,
     PackageComponent,
     NavbarComponent,
+    PremiumPipe,
+    CardComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,8 +51,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     MatToolbarModule,
     BrowserAnimationsModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatCardModule,
+    MatIconModule,
   ],
-  providers: [PackageService, EstablishmentService],
+  providers: [
+    PackageService,
+    EstablishmentService,
+    {
+      provide: LOCALE_ID,
+      useValue: 'fr-CA',
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
