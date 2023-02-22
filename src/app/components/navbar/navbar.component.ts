@@ -8,6 +8,4 @@ import { Package } from 'src/app/models';
 })
 export class NavbarComponent {
   @Input() _packages: Package[] = [];
-
-  isLoading = (this._packages.length = 0);
 }

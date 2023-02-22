@@ -9,4 +9,5 @@ import { Establishment, Package } from 'src/app/models';
 export class PackageComponent {
   @Input() _package: Package | null = null;
   @Input() _establishment: Establishment | null = null;
+  @Input() hideButton: boolean = false;
 }

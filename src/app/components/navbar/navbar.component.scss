@@ -13,4 +13,10 @@
   &__main_title {
     margin-bottom: 0;
   }
+
+  &__buttonGroup {
+    display: flex;
+    align-items: center;
+    column-gap: 2rem;
+  }
 }

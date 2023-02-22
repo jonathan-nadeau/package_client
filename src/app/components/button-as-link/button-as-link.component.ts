@@ -6,6 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./button-as-link.component.scss'],
 })
 export class ButtonAsLinkComponent {
-  @Input() link: [string, string] | null = null;
+  @Input() link: [string, string] | string | null = null;
   @Input() label: string = '';
 }

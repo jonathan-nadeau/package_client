@@ -1,1 +1,8 @@
-<main class="package"></main>
+<main class="packageView">
+  <app-package
+    *ngIf="_package && _establishment"
+    [_package]="_package"
+    [_establishment]="_establishment"
+    [hideButton]="true"
+  ></app-package>
+</main>

@@ -23,9 +23,9 @@ import { PackageViewComponent } from './views/package-view/package-view.componen
 import { CardComponent } from './components/card/card.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PriceDisplayComponent } from './components/price-display/price-display.component';
-import { PackageComponent } from './views/package-view/package.component';
 import { AverageScoreComponent } from './components/average-score/average-score.component';
 import { ButtonAsLinkComponent } from './components/button-as-link/button-as-link.component';
+import { PackageComponent } from './components/package/package.component';
 
 /**
  * Services
@@ -46,10 +46,10 @@ import { PremiumPipe } from './pipes/premium/premium.pipe';
     NavbarComponent,
     PremiumPipe,
     CardComponent,
-    PackageComponent,
     PriceDisplayComponent,
     AverageScoreComponent,
     ButtonAsLinkComponent,
+    PackageComponent,
     PackageViewComponent,
   ],
   imports: [

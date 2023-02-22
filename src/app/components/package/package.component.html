@@ -47,7 +47,7 @@
   <mat-card-footer>
     <mat-card-actions>
       <app-button-as-link
-        *ngIf="_package._id"
+        *ngIf="_package._id && !hideButton"
         [link]="['/package', _package._id]"
         label="Détails"
       ></app-button-as-link>
