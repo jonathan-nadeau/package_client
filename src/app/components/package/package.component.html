@@ -1,1 +1,56 @@
-<p>package works!</p>
+<mat-card *ngIf="_package && _establishment" class="package container">
+  <mat-card-header class="package__header">
+    <mat-card-title-group class="package__titles">
+      <mat-card-title class="package__title"
+        >{{ _package.name }}
+        <mat-icon *ngIf="_package.premium" class="package__premiumIcon"
+          >star</mat-icon
+        >
+        <span>({{ _package.code }})</span></mat-card-title
+      >
+      <mat-card-subtitle class="package__subtitle">{{
+        _establishment.name
+      }}</mat-card-subtitle>
+      <mat-card-subtitle class="package__subtitle package__address">{{
+        _establishment.city
+      }}</mat-card-subtitle>
+    </mat-card-title-group>
+    <app-price-display
+      [price]="_package.price"
+      [discount]="_package.discount"
+    ></app-price-display>
+  </mat-card-header>
+  <mat-card-content class="package__content">
+    <mat-card-subtitle class="package__subtitle">Catégories</mat-card-subtitle>
+    <ul class="package__categories">
+      <li *ngFor="let categorie of _package.categories">
+        {{ categorie }}
+      </li>
+    </ul>
+  </mat-card-content>
+  <mat-card-content class="package__content">
+    <mat-card-subtitle class="package__subtitle">Description</mat-card-subtitle>
+    <p>
+      {{ _package.description }}
+    </p>
+  </mat-card-content>
+  <mat-card-content class="package__content">
+    <p>
+      Date de départ:
+      {{ _package.start_date | date : "longDate" }}
+    </p>
+    <p>
+      Date de départ:
+      {{ _package.end_date | date : "longDate" }}
+    </p>
+  </mat-card-content>
+  <mat-card-footer>
+    <mat-card-actions>
+      <app-button-as-link
+        *ngIf="_package._id"
+        [link]="['/package', _package._id]"
+        label="Détails"
+      ></app-button-as-link>
+    </mat-card-actions>
+  </mat-card-footer>
+</mat-card>

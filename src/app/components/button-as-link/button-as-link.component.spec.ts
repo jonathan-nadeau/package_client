@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PackageComponent } from './package.component';
+import { ButtonAsLinkComponent } from './button-as-link.component';
 
-describe('PackageComponent', () => {
-  let component: PackageComponent;
-  let fixture: ComponentFixture<PackageComponent>;
+describe('ButtonAsLinkComponent', () => {
+  let component: ButtonAsLinkComponent;
+  let fixture: ComponentFixture<ButtonAsLinkComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PackageComponent ]
+      declarations: [ ButtonAsLinkComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PackageComponent);
+    fixture = TestBed.createComponent(ButtonAsLinkComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

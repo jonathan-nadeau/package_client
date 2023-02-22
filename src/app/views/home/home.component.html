@@ -1,14 +1,26 @@
 <main class="home">
   <section id="premium">
     <h2 class="title">Forfaits vedettes</h2>
-    <div class="home__premium">
+    <div
+      class="home__premium"
+      *ngIf="_packages.length > 0 && _establishments.length > 0"
+    >
       <app-card
         *ngFor="let _package of _packages | premium"
         [_package]="_package"
+        [_establishment]="getEstablishmentByPackage(_package)"
       ></app-card>
     </div>
   </section>
   <section id="packages">
     <h2 class="title">Tous les forfaits</h2>
+    <ul class="packages">
+      <li *ngFor="let _package of _packages">
+        <app-package
+          [_package]="_package"
+          [_establishment]="getEstablishmentByPackage(_package)"
+        ></app-package>
+      </li>
+    </ul>
   </section>
 </main>

@@ -20,7 +20,7 @@ export class PackageService {
     return this.http.get<Package[]>(this.API_URL);
   }
 
-  getPackagesById(id: string): Observable<Package> {
+  getPackageById(id: string): Observable<Package> {
     return this.http.get<Package>(`${this.API_URL}${id}`);
   }
 

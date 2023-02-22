@@ -1,0 +1,11 @@
+.priceDisplay {
+  &__price {
+    text-align: end;
+
+    &--discount {
+      @extend .priceDisplay__price;
+      text-decoration: line-through;
+      color: #525252;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+.package {
+  background-color: #fff;
+  color: #1f1d1d;
+
+  &__header,
+  &__content {
+    margin-bottom: 1rem;
+  }
+
+  &__titles {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title,
+  &__subtitle,
+  &__address {
+    display: flex;
+    align-items: center;
+    color: inherit;
+  }
+
+  &__subtitle {
+    color: #525252;
+  }
+
+  &__address {
+    font-size: 0.875rem;
+    font-weight: 700;
+  }
+
+  &__premiumIcon {
+    margin-left: 0.5rem;
+    color: #211f8b;
+  }
+
+  &__categories {
+    list-style: circle;
+
+    li {
+      transform: translateX(3rem);
+    }
+  }
+}

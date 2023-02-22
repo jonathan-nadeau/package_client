@@ -1,0 +1,12 @@
+<div class="priceDisplay">
+  <p
+    [class]="
+      discount > 0 ? 'priceDisplay__price--discount' : 'priceDisplay__price'
+    "
+  >
+    {{ price | currency : "CAD" }}
+  </p>
+  <p *ngIf="discount > 0" class="card__price">
+    {{ utils.getDiscount(price, discount) | currency : "CAD" }}
+  </p>
+</div>

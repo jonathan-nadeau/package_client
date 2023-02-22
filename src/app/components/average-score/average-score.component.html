@@ -1,0 +1,14 @@
+<p class="averageScore">
+  <mat-icon
+    *ngFor="let start of [].constructor(utilsService.getAverageScore(reviews))"
+    class="averageScore__starReview"
+  >
+    star
+  </mat-icon>
+  <span
+    >({{ utilsService.getAverageScore(reviews) }}
+    {{
+      utilsService.getAverageScore(reviews) === 1 ? "étoile" : "étoiles"
+    }})</span
+  >
+</p>

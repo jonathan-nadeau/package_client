@@ -30,16 +30,6 @@
     color: #211f8b;
   }
 
-  &__price {
-    text-align: end;
-
-    &--discount {
-      @extend .card__price;
-      text-decoration: line-through;
-      color: #525252;
-    }
-  }
-
   &__score {
     display: flex;
     align-items: center;
@@ -48,9 +38,5 @@
   &__starReview {
     font-size: 1rem;
     color: #e4d00a;
-  }
-
-  &__button {
-    background-color: #212121;
   }
 }

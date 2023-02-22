@@ -1,9 +1,14 @@
 .navbar {
   position: fixed;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  width: 100%;
   z-index: 9999;
+
+  &__flex {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
   &__main_title {
     margin-bottom: 0;

@@ -4,7 +4,7 @@ import {
   AboutComponent,
   AdminComponent,
   HomeComponent,
-  PackageComponent,
+  PackageViewComponent,
 } from './views';
 
 const routes: Routes = [
@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'admin', component: AdminComponent },
-  { path: 'package/:packageId', component: PackageComponent },
+  { path: 'package/:packageId', component: PackageViewComponent },
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];
 

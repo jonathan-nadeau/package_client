@@ -9,16 +9,10 @@
       </mat-card-subtitle>
       <p class="card__address">{{ _establishment.city }}</p>
     </mat-card-title-group>
-    <div class="card__price">
-      <p
-        [class]="_package.discount > 0 ? 'card__price--discount' : 'card_price'"
-      >
-        {{ _package.price | currency : "CAD" }}
-      </p>
-      <p *ngIf="_package.discount > 0" class="card__price">
-        {{ getDiscount(_package.price, _package.discount) | currency : "CAD" }}
-      </p>
-    </div>
+    <app-price-display
+      [price]="_package.price"
+      [discount]="_package.discount"
+    ></app-price-display>
   </mat-card-header>
   <mat-card-content>
     <p>
@@ -31,15 +25,21 @@
     </p>
     <p class="card__score">
       <mat-icon
-        *ngFor="let start of [].constructor(getAverageScore(_package.reviews))"
+        *ngFor="
+          let start of [].constructor(
+            utilsService.getAverageScore(_package.reviews)
+          )
+        "
         class="card__starReview"
       >
         star
       </mat-icon>
       <span
-        >({{ getAverageScore(_package.reviews) }}
+        >({{ utilsService.getAverageScore(_package.reviews) }}
         {{
-          getAverageScore(_package.reviews) === 1 ? "étoile" : "étoiles"
+          utilsService.getAverageScore(_package.reviews) === 1
+            ? "étoile"
+            : "étoiles"
         }})</span
       >
     </p>
@@ -47,12 +47,11 @@
 
   <mat-card-footer>
     <mat-card-actions>
-      <a
-        mat-button
-        [routerLink]="['/package', _package._id]"
-        class="card__button"
-        >Détails</a
-      >
+      <app-button-as-link
+        *ngIf="_package._id"
+        [link]="['/package', _package._id]"
+        label="Détails"
+      ></app-button-as-link>
     </mat-card-actions>
   </mat-card-footer>
 </mat-card>

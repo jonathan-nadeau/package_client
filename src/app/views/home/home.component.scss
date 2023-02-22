@@ -5,7 +5,13 @@
     width: fit-content;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 1rem;
   }
+}
+
+.packages {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
 }
