@@ -1,0 +1,7 @@
+<main class="highRated container">
+  <app-card
+    *ngFor="let _package of _packages | rated : 6"
+    [_package]="_package"
+    [_establishment]="getEstablishmentByPackage(_package)"
+  ></app-card>
+</main>

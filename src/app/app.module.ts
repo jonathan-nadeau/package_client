@@ -27,6 +27,7 @@ import { PriceDisplayComponent } from './components/price-display/price-display.
 import { AverageScoreComponent } from './components/average-score/average-score.component';
 import { ButtonAsLinkComponent } from './components/button-as-link/button-as-link.component';
 import { PackageComponent } from './components/package/package.component';
+import { HighRatedViewComponent } from './views/high-rated-view/high-rated-view.component';
 
 /**
  * Services
@@ -38,6 +39,7 @@ import { EstablishmentService, PackageService, UtilsService } from './services';
  */
 import { PremiumPipe } from './pipes/premium/premium.pipe';
 import { DiscountPipe } from './pipes/discount/discount.pipe';
+import { RatedPipe } from './pipes/rated/rated.pipe';
 
 @NgModule({
   declarations: [
@@ -55,6 +57,8 @@ import { DiscountPipe } from './pipes/discount/discount.pipe';
     PackageViewComponent,
     DiscountViewComponent,
     DiscountPipe,
+    HighRatedViewComponent,
+    RatedPipe,
   ],
   imports: [
     BrowserModule,
@@ -70,6 +74,7 @@ import { DiscountPipe } from './pipes/discount/discount.pipe';
   providers: [
     PackageService,
     EstablishmentService,
+    UtilsService,
     {
       provide: LOCALE_ID,
       useValue: 'fr-CA',

@@ -6,6 +6,7 @@ import {
   HomeComponent,
   PackageViewComponent,
   DiscountViewComponent,
+  HighRatedViewComponent,
 } from './views';
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'admin', component: AdminComponent },
   { path: 'package/:packageId', component: PackageViewComponent },
   { path: 'discount', component: DiscountViewComponent },
+  { path: 'high-rated', component: HighRatedViewComponent },
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];
 
