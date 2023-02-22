@@ -2,7 +2,10 @@
   <mat-card-header class="card__header">
     <mat-card-title-group class="card__titles">
       <mat-card-title class="card__title">
-        {{ _package.name }} <mat-icon class="card__premiumIcon">star</mat-icon>
+        {{ _package.name }}
+        <mat-icon *ngIf="_package.premium" class="card__premiumIcon"
+          >star</mat-icon
+        >
       </mat-card-title>
       <mat-card-subtitle class="card__subtitle">
         {{ _establishment.name }}
@@ -23,26 +26,11 @@
       Date de départ:
       {{ _package.end_date | date : "longDate" }}
     </p>
-    <p class="card__score">
-      <mat-icon
-        *ngFor="
-          let start of [].constructor(
-            utilsService.getAverageScore(_package.reviews)
-          )
-        "
-        class="card__starReview"
-      >
-        star
-      </mat-icon>
-      <span
-        >({{ utilsService.getAverageScore(_package.reviews) }}
-        {{
-          utilsService.getAverageScore(_package.reviews) === 1
-            ? "étoile"
-            : "étoiles"
-        }})</span
-      >
-    </p>
+    <app-average-score
+      *ngIf="_package.reviews.length > 0"
+      [reviews]="_package.reviews"
+    ></app-average-score>
+    <p *ngIf="_package.reviews.length === 0">Pas de note</p>
   </mat-card-content>
 
   <mat-card-footer>

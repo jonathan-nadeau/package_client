@@ -20,6 +20,7 @@ import { HomeComponent } from './views/home/home.component';
 import { AboutComponent } from './views/about/about.component';
 import { AdminComponent } from './views/admin/admin.component';
 import { PackageViewComponent } from './views/package-view/package-view.component';
+import { DiscountViewComponent } from './views/discount-view/discount-view.component';
 import { CardComponent } from './components/card/card.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PriceDisplayComponent } from './components/price-display/price-display.component';
@@ -36,6 +37,7 @@ import { EstablishmentService, PackageService, UtilsService } from './services';
  * Pipes
  */
 import { PremiumPipe } from './pipes/premium/premium.pipe';
+import { DiscountPipe } from './pipes/discount/discount.pipe';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,8 @@ import { PremiumPipe } from './pipes/premium/premium.pipe';
     ButtonAsLinkComponent,
     PackageComponent,
     PackageViewComponent,
+    DiscountViewComponent,
+    DiscountPipe,
   ],
   imports: [
     BrowserModule,

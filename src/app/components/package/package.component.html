@@ -44,6 +44,13 @@
       {{ _package.end_date | date : "longDate" }}
     </p>
   </mat-card-content>
+  <mat-card-content>
+    <app-average-score
+      *ngIf="_package.reviews.length > 0"
+      [reviews]="_package.reviews"
+    ></app-average-score>
+    <p *ngIf="_package.reviews.length === 0">Pas de note</p>
+  </mat-card-content>
   <mat-card-footer>
     <mat-card-actions>
       <app-button-as-link

@@ -5,6 +5,7 @@ import {
   AdminComponent,
   HomeComponent,
   PackageViewComponent,
+  DiscountViewComponent,
 } from './views';
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'package/:packageId', component: PackageViewComponent },
+  { path: 'discount', component: DiscountViewComponent },
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];
 
