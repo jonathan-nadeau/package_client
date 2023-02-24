@@ -20,6 +20,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { NgChartsModule } from 'ng2-charts';
 
 /**
  * Components
@@ -52,6 +53,7 @@ import { DiscountPipe } from './pipes/discount/discount.pipe';
 import { RatedPipe } from './pipes/rated/rated.pipe';
 import { EditDialogComponent } from './components/edit-dialog/edit-dialog.component';
 import { AddDialogComponent } from './components/add-dialog/add-dialog.component';
+import { GraphicsComponent } from './components/graphics/graphics.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +76,7 @@ import { AddDialogComponent } from './components/add-dialog/add-dialog.component
     AdminTableComponent,
     EditDialogComponent,
     AddDialogComponent,
+    GraphicsComponent,
   ],
   imports: [
     BrowserModule,
@@ -94,6 +97,7 @@ import { AddDialogComponent } from './components/add-dialog/add-dialog.component
     MatAutocompleteModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    NgChartsModule,
   ],
   providers: [
     PackageService,
