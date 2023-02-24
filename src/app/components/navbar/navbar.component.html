@@ -4,14 +4,6 @@
       <a routerLink="/home">La forfaiterie</a>
     </h1>
     <div class="navbar__buttonGroup">
-      <app-button-as-link
-        [label]="'6 étoiles et plus'"
-        [link]="'/high-rated'"
-      ></app-button-as-link>
-      <app-button-as-link
-        [label]="'Forfaits à rabais'"
-        [link]="'/discount'"
-      ></app-button-as-link>
       <button mat-button [matMenuTriggerFor]="menu">Forfaits</button>
       <mat-menu #menu="matMenu">
         <a
@@ -22,7 +14,19 @@
           {{ _package.name }}
         </a>
       </mat-menu>
+      <app-button-as-link
+        [label]="'6 étoiles et plus'"
+        [link]="'/high-rated'"
+      ></app-button-as-link>
+      <app-button-as-link
+        [label]="'Forfaits à rabais'"
+        [link]="'/discount'"
+      ></app-button-as-link>
       <app-button-as-link label="À propos" link="/about"></app-button-as-link>
+      <app-button-as-link
+        label="Administration"
+        link="/admin"
+      ></app-button-as-link>
     </div>
   </div>
 </mat-toolbar>

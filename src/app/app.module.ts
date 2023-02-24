@@ -10,7 +10,16 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 /**
  * Components
@@ -28,6 +37,7 @@ import { AverageScoreComponent } from './components/average-score/average-score.
 import { ButtonAsLinkComponent } from './components/button-as-link/button-as-link.component';
 import { PackageComponent } from './components/package/package.component';
 import { HighRatedViewComponent } from './views/high-rated-view/high-rated-view.component';
+import { AdminTableComponent } from './components/admin-table/admin-table.component';
 
 /**
  * Services
@@ -40,6 +50,8 @@ import { EstablishmentService, PackageService, UtilsService } from './services';
 import { PremiumPipe } from './pipes/premium/premium.pipe';
 import { DiscountPipe } from './pipes/discount/discount.pipe';
 import { RatedPipe } from './pipes/rated/rated.pipe';
+import { EditDialogComponent } from './components/edit-dialog/edit-dialog.component';
+import { AddDialogComponent } from './components/add-dialog/add-dialog.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +71,9 @@ import { RatedPipe } from './pipes/rated/rated.pipe';
     DiscountPipe,
     HighRatedViewComponent,
     RatedPipe,
+    AdminTableComponent,
+    EditDialogComponent,
+    AddDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,6 +85,15 @@ import { RatedPipe } from './pipes/rated/rated.pipe';
     MatButtonModule,
     MatCardModule,
     MatIconModule,
+    MatTableModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCheckboxModule,
+    ReactiveFormsModule,
+    MatAutocompleteModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   providers: [
     PackageService,

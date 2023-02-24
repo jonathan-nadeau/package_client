@@ -1,0 +1,16 @@
+.md-dialog-container {
+  width: 100%;
+}
+
+.editDialog {
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    form {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1rem;
+    }
+  }
+}

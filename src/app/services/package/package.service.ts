@@ -6,7 +6,7 @@ import { endpoints } from 'src/app/constants';
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type': 'application/json',
+    'content-type': 'application/json',
   }),
 };
 
@@ -34,7 +34,7 @@ export class PackageService {
   ): Observable<Package | { error: string }> {
     return this.http.patch<Package | { error: string }>(
       `${this.API_URL}${id}`,
-      data,
+      JSON.stringify(data),
       httpOptions
     );
   }

@@ -1,0 +1,53 @@
+<button mat-fab class="addBtn" (click)="openAddDialog()">
+  <mat-icon>add</mat-icon>
+</button>
+<table mat-table [dataSource]="_packages" class="mat-elevation-z8 adminTable">
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef class="adminTable__columnHeader">
+      Forfait
+    </th>
+    <td mat-cell *matCellDef="let _package" class="adminTable__cell">
+      {{ _package.name }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="establishment">
+    <th mat-header-cell *matHeaderCellDef class="adminTable__columnHeader">
+      Établissement
+    </th>
+    <td mat-cell *matCellDef="let _package" class="adminTable__cell">
+      <ng-container *ngIf="getEstablishmentByPackage(_package)">
+        {{ getEstablishmentByPackage(_package)?.name }}
+      </ng-container>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="edit">
+    <th
+      mat-header-cell
+      *matHeaderCellDef
+      class="adminTable__columnHeader--rightAlign"
+    >
+      Édition
+    </th>
+    <td
+      mat-cell
+      *matCellDef="let _package"
+      class="adminTable__cell--rightAlign"
+    >
+      <button mat-icon-button (click)="openDialog(_package)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="handleOnDelete(_package._id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr
+    mat-row
+    *matRowDef="let row; columns: displayedColumns"
+    class="adminTable__row"
+  ></tr>
+</table>
