@@ -12,24 +12,46 @@ import { BaseChartDirective } from 'ng2-charts';
 export class GraphicsComponent {
   @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
   _packages: Package[] = [];
+  chartLabels = [
+    '1 étoile',
+    '2 étoile',
+    '3 étoile',
+    '4 étoile',
+    '5 étoile',
+    '6 étoile',
+    '7 étoile',
+    '8 étoile',
+    '9 étoile',
+    '10 étoile',
+  ];
 
-  public data: ChartData<'pie', number[]> = {
-    labels: [
-      '1 étoile',
-      '2 étoile',
-      '3 étoile',
-      '4 étoile',
-      '5 étoile',
-      '6 étoile',
-      '7 étoile',
-      '8 étoile',
-      '9 étoile',
-      '10 étoile',
-    ],
-    datasets: [],
+  public pieChart: ChartConfiguration = {
+    data: {
+      labels: this.chartLabels,
+      datasets: [
+        {
+          label: 'Note des utilisateurs',
+          data: this.chartLabels.map((label, index) =>
+            this.getAmoutOfReviewByScore(index + 1)
+          ),
+        },
+      ],
+    },
+    type: 'pie',
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: false,
+      plugins: {
+        legend: {
+          display: true,
+        },
+        title: {
+          text: 'Note donner par les utilisateurs',
+        },
+      },
+    },
   };
-
-  public chartType: ChartType = 'doughnut';
 
   constructor(private packageService: PackageService) {}
 
@@ -40,15 +62,18 @@ export class GraphicsComponent {
   getPackages() {
     this.packageService.getPackages().subscribe((result) => {
       this._packages = result;
-      this.data.datasets = [
-        {
-          data: this._packages
-            .map((_package) =>
-              _package.reviews.map((review) => review.scoreOutOfTen)
-            )
-            .flat(),
-        },
-      ];
     });
+  }
+
+  getAmoutOfReviewByScore(score: number): number {
+    let amoutOfScore: number = 0;
+
+    this._packages.forEach((_package) => {
+      _package.reviews.forEach((review) => {
+        if (review.scoreOutOfTen === score) amoutOfScore++;
+      });
+    });
+
+    return amoutOfScore;
   }
 }

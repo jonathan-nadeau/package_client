@@ -1,4 +1,13 @@
-<h2>Notes des forfais</h2>
-<div>
-  <canvas baseChart [type]="chartType" [data]="data"> </canvas>
+<div class="graphics">
+  <h2>Notes des forfais</h2>
+  <div style="display: block; width: 100%" *ngIf="_packages.length > 0">
+    <canvas
+      style="display: block; width: 100%"
+      baseChart
+      [type]="pieChart.type"
+      [data]="pieChart.data"
+      [options]="pieChart.options"
+    >
+    </canvas>
+  </div>
 </div>
